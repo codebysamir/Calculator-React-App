@@ -184,7 +184,7 @@ function handleOperator(prevNum, operatorState, newNum, prevNewCount) {
       // eslint-disable-next-line
       return Function(`'use strict';return (${prevNewCount})`)()
     default:
-      alert('Something is wrong')
+      return
   }
 }
 
