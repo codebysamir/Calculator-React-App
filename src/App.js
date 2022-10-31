@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from "react";
+import React, {useReducer} from "react";
 import "./css/app.css";
 import ResultScreen from "./ResultScreen";
 
@@ -162,6 +162,8 @@ function reduce(state, actions) {
       } else {
         return {...state}
       }
+    default:
+      alert('No ACTIONS.TYPE matched')
   }
 }
 
@@ -176,9 +178,13 @@ function handleOperator(prevNum, operatorState, newNum, prevNewCount) {
     case '-':
       return prevNum - newNum
     case '*':
+      // eslint-disable-next-line
       return Function(`'use strict';return (${prevNewCount})`)()
     case '/':
+      // eslint-disable-next-line
       return Function(`'use strict';return (${prevNewCount})`)()
+    default:
+      alert('Something is wrong')
   }
 }
 
